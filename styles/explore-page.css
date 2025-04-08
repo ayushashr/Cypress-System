@@ -63,6 +63,28 @@ header{
   font-family: 'Arial', sans-serif;
 }
 
+#report-button {
+  background-color: #84D7EB;
+  color: black;
+  font-size: 16px;            /* Font size */
+  padding: 12px 24px;         /* Padding for size */
+  border: none;               /* Remove default border */
+  border-radius: 50px;        /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor on hover */
+  transition: all 0.3s ease;  /* Smooth transition for effects */
+  font-family: 'Arial', sans-serif;
+}
+
+#report-button:hover {
+  background-color: #72b9cb;
+}
+
+.report-info-container:hover {
+  background-color: #d8dcdd;
+}
+
+
+
 .reports-container{
   display: flex;
   flex-direction: column;
