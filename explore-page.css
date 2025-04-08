@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+
+html,body{
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column; 
+  overflow: hidden;
+}
+
+header{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 10px;
+
+}
+
+
+.citizen-page-container{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.citizen-page-left{
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#search-bar{
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin-bottom: 50px;
+}
+
+#report-button{
+  color: black;               /* White text color */
+  font-size: 16px;            /* Font size */
+  padding: 12px 24px;         /* Padding for size */
+  border: none;               /* Remove default border */
+  border-radius: 50px;        /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor on hover */
+  transition: all 0.3s ease;  /* Smooth transition for effects */
+  font-family: 'Arial', sans-serif;
+}
+
+.reports-container{
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  overflow: scroll;
+}
+
+.report-info-container{
+  padding: 20px;
+}
+
+.report-info-container div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.report-info-container .report-title{
+  font-size: 24px;
+}
+.report-info-container .report-status{
+  font-size: 18px;
+}
+.report-info-container .report-location{
+  font-size: 18px;
+}
+.report-info-container .report-description{
+  font-size: 18px;
+}
+
+.citizen-page-right{
+  width: 100%;
+  padding: 20px;
+}
+
+#map{
+  height: 100%;
+  width: 100%;
+
+}
+
+
+
+/* The Popup Form (hidden by default) */
+.report-form-container{
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
+
+.report-form-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 500px;
+  text-align:start;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+li{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+ul{
+  display:flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #218838;
+}

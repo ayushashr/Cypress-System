@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./explore-page.css">
+  <script type="module" src="./explore-page.js"></script>
+</head>
+<body>
+  <header>
+    <button>Explore</button>
+    <button>My Reports</button>
+  </header>
+  <div class="citizen-page-container">
+    
+    <div class="citizen-page-left">
+      <div>
+        <input type="text" id="search-bar" placeholder="Search Location">
+
+        <div class="reports-container">
+          <div class="report-info-container">
+            <div>
+              <h1 class="report-title">Report Title</h1>
+              <h2 class="report-status">Status: </h2>
+            </div>
+            <h3 class="report-location">Location: </h3>
+            <h4 class="report-description">Description:</h4>
+          </div>
+  
+          <div class="report-info-container">
+            <div>
+              <h1 class="report-title">Report Title</h1>
+              <h2 class="report-status">Status: </h2>
+            </div>
+            <h3 class="report-location">Location: </h3>
+            <h4 class="report-description">Description:</h4>
+          </div>
+          <div class="report-info-container">
+            <div>
+              <h1 class="report-title">Report Title</h1>
+              <h2 class="report-status">Status: </h2>
+            </div>
+            <h3 class="report-location">Location: </h3>
+            <h4 class="report-description">Description:</h4>
+          </div>
+          <div class="report-info-container">
+            <div>
+              <h1 class="report-title">Report Title</h1>
+              <h2 class="report-status">Status: </h2>
+            </div>
+            <h3 class="report-location">Location: </h3>
+            <h4 class="report-description">Description:</h4>
+          </div>
+          <div class="report-info-container">
+            <div>
+              <h1 class="report-title">Report Title</h1>
+              <h2 class="report-status">Status: </h2>
+            </div>
+            <h3 class="report-location">Location: </h3>
+            <h4 class="report-description">Description:</h4>
+          </div>
+        </div>
+      </div>
+      
+
+      <button id="report-button">Report Issue</button>
+    </div>
+
+    <div class="citizen-page-right">
+      <div id="map"></div>
+    </div>
+  </div>
+
+
+  <div id="report-form-container" class="report-form-container">
+    <div class="report-form-content">
+      
+      <form>
+        <h2>Report Form</h2>
+        <ul>
+          <li>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+          </li>
+          <li>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+          </li>
+          <li>
+            <label for="description">Description:</label>
+            <textarea id="descriptioin" name="description" rows="6" cols="50" placeholder="Describe the issue.."></textarea>
+          </li>
+        </ul>
+        
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+
+  </div>
+
+  <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});
+        //to get the map to work change the key with this api key: AIzaSyBzlUFvIOR_ib5xbh03sYh7To5nk93DqBI AIzaSyBzlUFvIOR_ib5xbh03sYh7To5nk93DqBI
+        //WHEN YOUR TESTING TO NOT USE THIS KEY BECAUSE IT HAS LIMITED USES (the limit is like 20000 but i aint taking no chances)
+        //
+        </script>
+  
+</body>
+</html>
