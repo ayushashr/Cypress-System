@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
            
             //use demo email = admin@cypress.com and password = C123
             if (email === 'admin@cypress.com' && password === 'C123') {
-                window.location.href = 'adminHome.html';
+                window.location.href = '../index/adminHome.html';
             } else {
                 alert('Invalid email or password. Please try again.');
             }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
            
             //use demo email = citizen@cypress.com and password = C123
             if (email === 'citizen@cypress.com' && password === 'C123') {
-                window.location.href = 'map.html';
+                window.location.href = '../index/explore-page.html';
             } else {
                 alert('Invalid email or password. Please try again.');
             }
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             //no check, automatically redirect after signup form is filled
-            window.location.href = 'map.html';
+            window.location.href = '../index/explore-page.html';
         });
     }
 
