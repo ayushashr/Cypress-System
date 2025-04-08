@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>loginCitizen</title>
+    <title>admin-login</title>
     <style>
         * {
             margin: 0;
@@ -14,34 +14,21 @@
         body {
             height: 100vh;
             display: flex;
+            justify-content: center;
+            align-items: center;
         }
        
-        .container {
-            display: flex;
+        .login-section {
+            background-color: white;
             width: 100%;
-            height: 100%;
-        }
-       
-        .section {
-            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
        
-        .login-section {
-            background-color: #ffffff;
-            border-right: 3px solid black;
-        }
-       
-        .signup-section {
-            background-color: white;
-        }
-       
         .form-container {
-            width: 100%;
-            max-width: 400px;
+            width: 500px;
             padding: 30px;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -98,49 +85,24 @@
 </head>
 <body>
     <div class="container">
-
-
+       
         <!-- Login Section -->
         <div class="section login-section">
             <div class="form-container">
-                <h2>Login (Citizen)</h2>
-                <form id="citizen-login-form">
-                    <div class="form-spacing">
-                        <label for="citizen-login-email">Email:</label>
-                        <input type="email" id="citizen-login-email" name="email" required>
+                <h2>Login (Admin)</h2>
+                <form id="admin-login-form">
+                    <div class="form-sapcing">
+                        <label for="admin-login-email">Email:</label>
+                        <input type="email" id="admin-login-email" name="email" required>
                     </div>
+
+
                     <div class="form-spacing">
-                        <label for="citizen-login-password">Password:</label>
-                        <input type="password" id="citizen-login-password" name="password" required>
+                        <label for="admin-login-password">Password:</label>
+                        <input type="password" id="admin-login-password" name="password" required>
                     </div>
                     <p style="margin-top: 5px; margin-bottom: 20px;">Forgot password?</p>
                     <button type="submit">Login</button>
-                </form>
-            </div>
-        </div>
-       
-        <!-- Signup Section -->
-        <div class="section signup-section">
-            <div class="form-container">
-                <h2>Create an Account</h2>
-                <form id="citizen-signup-form">
-                    <div class="form-spacing">
-                        <label for="fn">First Name:</label>
-                        <input type="text" id="fn" name="fn" required>
-                    </div>
-                    <div class="form-spacing">
-                        <label for="ln">Last Name:</label>
-                        <input type="text" id="ln" name="ln" required>
-                    </div>
-                    <div class="form-spacing">
-                        <label for="citizen-signup-email">Email:</label>
-                        <input type="email" id="citizen-signup-email" name="email" required>
-                    </div>
-                    <div class="form-spacing">
-                        <label for="citizen-signup-password">Password:</label>
-                        <input type="password" id="citizen-signup-password" name="password" required>
-                    </div>
-                    <button type="submit">Sign Up</button>
                 </form>
             </div>
         </div>
@@ -148,7 +110,7 @@
 
 
     <!-- connect to js file -->
-    <script src="login.js"></script>
-   
+    <script src="../src/login.js"></script>
+
+
 </body>
-</html>
