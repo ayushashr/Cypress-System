@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //linked from admin (loginAdmin)
     if (adminLoginForm){
         adminLoginForm.addEventListener('submit', function(event) {
-            
+            event.preventDefault();
            
             const email = document.getElementById('admin-login-email').value;
             const password = document.getElementById('admin-login-password').value;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //linked from citizen (loginCitizen)
     if (citizenLoginForm){
         citizenLoginForm.addEventListener('submit', function(event) {
-            
+            event.preventDefault();
            
             const email = document.getElementById('citizen-login-email').value;
             const password = document.getElementById('citizen-login-password').value;
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         
             if (flag === true ) {
+
                 window.location.href = '../index/explore-page.html';
             }
             else{
