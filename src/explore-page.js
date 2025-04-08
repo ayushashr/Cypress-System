@@ -176,38 +176,4 @@ async function initMap() {
   searchReview.addListener("places_changed", () => {
     const places = searchReview.getPlaces();
 
-    if (!places || places.length === 0) return;
-
-    const bounds = new google.maps.LatLngBounds();
-
-    places.forEach(place => {
-      if (!place.geometry) return;
-
-      if (place.geometry.viewport) {
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-
-    map.fitBounds(bounds);
-  });
-}
-
-initMap();
-
-// Form popup control
-const openFormBtn = document.getElementById('report-button');
-const popupForm = document.getElementById('report-form-container');
-
-openFormBtn.addEventListener('click', function() {
-  popupForm.style.display = 'flex';
-});
-
-window.addEventListener('click', function(event) {
-  if (event.target === popupForm) {
-    popupForm.style.display = 'none';
-  }
-});
-
-
+    if (!

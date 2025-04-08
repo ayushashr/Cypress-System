@@ -88,9 +88,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 citizenAccounts.push({firstName: `${firstName}`, lastName: `${lastName}`, email: `${email}`, password: `${password}`})
                 //no check, automatically redirect after signup form is filled
                 window.location.href = '../index/explore-page.html';
-            }
-            
-        });
-    }
-
-});
+  
