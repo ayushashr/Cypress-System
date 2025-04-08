@@ -1,1 +1,102 @@
- 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f3f3f3;
+    padding: 40px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  
+  header button {
+    padding: 8px 12px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #reportList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Report Card */
+  .report-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    cursor: default;
+  }
+  
+  .report-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .report-location,
+  .report-description {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  
+  .report-card strong {
+    font-weight: bold;
+  }
+  
+  .buttons {
+    margin-top: 12px;
+  }
+  
+  .buttons button {
+    padding: 6px 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .approve-btn {
+    background-color: #28a745;
+  }
+  
+  .decline-btn {
+    background-color: #dc3545;
+  }
+   

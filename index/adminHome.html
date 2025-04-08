@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin</title>
-  <link rel="stylesheet" href="admin.css">
-  <script defer src="admin.js"></script>
+  <meta charset="UTF-8" />
+  <title>Pending Reports</title>
+  <link rel="stylesheet" href="../styles/admin.css" />
 </head>
 <body>
+  <header>
+    <button onclick="window.location.href='adminHome.html'">Pending Reports</button>
+    <button onclick="window.location.href='approvedReport.html'">Approved</button>
+  </header>
 
+  <div class="container">
+    <h2 class="section-title">Pending Reports</h2>
+    <div id="reportList"></div>
+  </div>
+
+  <script src="adminHome.js"></script>
 </body>
-</html> 
+</html>
