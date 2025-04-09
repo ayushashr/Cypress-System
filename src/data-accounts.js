@@ -55,6 +55,7 @@ export function addNotification(title, status) {
 let defaultReports = [
   {
     id: '1',
+    user: 'citizen',
     title: 'Potholes near Mcdonalds',
     location: "McDonald's, Yonge Street, Toronto, ON, Canada",
     status: "Pending",
@@ -63,6 +64,7 @@ let defaultReports = [
   {
     id: '2',
     title: 'Pothole',
+    user: 'citizen',
     location: "McDonald's, Yonge Street, Toronto, ON, Canada",
     status: "In Progress",
     description: 'There are potholes near the mcdonlads in TMU.'
@@ -71,6 +73,7 @@ let defaultReports = [
   {
     id: '3',
     title: 'Flooding Near Scarborough Bluffs',
+    user: 'citizen',
     location: "Scarborough Bluffs Park, Scarborough, ON, Canada",
     status: "Pending",
     description: "Heavy rainfall has led to localized flooding near Bluffer’s Park, close to the Scarborough Bluffs. The area becomes impassable for pedestrians and cyclists during storms, and there's concern about potential erosion of the shoreline. Drainage improvements and flood prevention measures are necessary to mitigate the issue."
@@ -79,6 +82,7 @@ let defaultReports = [
   {
     id: '4',
     title: 'Graffiti on TTC Subway Stations',
+    user: 'citizen',
     location: "Dundas Subway Station, Dundas Street East, Toronto, ON, Canada",
     status: "Completed",
     description: 'The tags are unsightly and contribute to a negative impression of public transit.'
@@ -87,6 +91,7 @@ let defaultReports = [
   {
     id: '5',
     title: 'Uneven Pavement on College Street',
+    user: 'ashley',
     location: "Toronto Metropolitan University, Victoria Street, Toronto, ON, Canada",
     status: "Pending",
     description: "The pavement on College Street between Bathurst and Spadina has become uneven, leading to tripping hazards for pedestrians and creating problems for cyclists. The city should consider resurfacing this stretch of road to ensure safety for all residents and visitors."
@@ -95,6 +100,7 @@ let defaultReports = [
   {
     id: '6',
     title: 'Poor Street Lighting',
+    user: 'ashley',
     location: "Toronto Metropolitan University, Victoria Street, Toronto, ON, Canada",
     status: "Pending",
     description: "Street lighting is inadequate on Dundas Street East, specifically between Parliament and Jarvis Street. The dimly lit streets create unsafe conditions at night, particularly for pedestrians and cyclists. There are calls for brighter street lamps and improved lighting infrastructure to enhance safety in the area."
@@ -103,6 +109,7 @@ let defaultReports = [
   {
     id: '7',
     title: 'Hanging Sign',
+    user: 'ashley',
     location: "Toronto Metropolitan University, Victoria Street, Toronto, ON, Canada",
     status: "Pending",
     description: "There is a hanging sign that looks like its about to fall above the TMU SLC. It might hurt someone"
@@ -111,9 +118,10 @@ let defaultReports = [
   {
     id: '8',
     title: 'Damaged Park Benches',
+    user: 'bozo',
     location: "High Park, Bloor Street West, Toronto, ON, Canada",
     status: "Pending",
-    description: "Several park benches near Grenadier Pond in High Park are damaged or missing, making it difficult for visitors to relax and enjoy the natural surroundings. The city should prioritize replacing or repairing the benches to ensure that the park remains an accessible and enjoyable space for all."
+    description: "The benches are unstable."
   },
 ];
 const reports = JSON.parse(localStorage.getItem('reports')) || defaultReports;

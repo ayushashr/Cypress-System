@@ -126,6 +126,19 @@ header{
 
 }
 
+header button {
+  padding: 8px 14px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+header button:hover {
+  background-color: #f0f0f0;
+}
 
 
 /* The Popup Form (hidden by default) */
