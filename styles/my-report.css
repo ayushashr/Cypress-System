@@ -1,0 +1,141 @@
+/* Base layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  height: 100%;
+}
+
+/* Top-right navigation buttons */
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 10px;
+}
+
+header button {
+  padding: 8px 14px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+header button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Centered box */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Report List */
+#reportList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each Report Card */
+.report-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Card Layout */
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.report-location,
+.report-description {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.report-card strong {
+  font-weight: bold;
+}
+
+.report-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 160px; /* Fixed width for consistency */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.indicator {
+  width: 14px;    /* Increased from 10px */
+  height: 14px;   /* Increased from 10px */
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.indicator.active {
+  background-color: rgb(119, 255, 0); /* Bright green for active step */
+}
+
+.label {
+  font-size: 10px;
+  color: #333;
+  margin-top: 3px;
+  height: 12px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: lightgray;
+  margin: 0 4px;
+}
+
