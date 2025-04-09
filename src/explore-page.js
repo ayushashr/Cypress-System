@@ -44,7 +44,7 @@ function renderReports(filterLocation = '') {
         if (status === google.maps.places.PlacesServiceStatus.OK && results[0]?.geometry) {
           const loc = results[0].geometry.location;
           map.setCenter(loc);
-          map.setZoom(8);
+          map.setZoom(19);
 
           new google.maps.Marker({
             position: loc,
@@ -70,10 +70,11 @@ reportForm.addEventListener('submit', function (e) {
   const title = document.getElementById('title').value;
   const location = document.getElementById('location').value;
   const description = document.getElementById('description').value;
-  const status = "Pending"
+  const user = "citizen";
+  const status = "Pending";
   id = id +1;
 
-  const newReport = { id, title, location, status, description };
+  const newReport = { id, user, title, location, status, description };
 
   // Add the new report to the reports array
   reports.push(newReport);
@@ -85,11 +86,20 @@ reportForm.addEventListener('submit', function (e) {
   // Reset the form after submission
   reportForm.reset();
 });
-
-// Handle search functionality for filtering reports by location
 const searchInput = document.getElementById('search-bar');
+const defaultCenter = { lat: 43.651, lng: -79.347 }; // Default map center (Toronto)
+const defaultZoom = 12; // Default zoom level
+
 searchInput.addEventListener('change', () => {
   const searchLocation = searchInput.value.trim();
+
+  if (!searchLocation) {
+    // If the search input is empty, reset the map to its original position
+    map.setCenter(defaultCenter);
+    map.setZoom(defaultZoom);
+    return; // Exit the function early
+  }
+
   renderReports(searchLocation);
 
   // Use PlacesService to geocode the input and center the map
@@ -100,10 +110,16 @@ searchInput.addEventListener('change', () => {
   };
 
   service.findPlaceFromQuery(request, (results, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK && results && results[0].geometry) {
+    if (status === google.maps.places.PlacesServiceStatus.OK && results && results.length > 0) {
       const location = results[0].geometry.location;
-      map.setCenter(location);
-      map.setZoom(14);
+      
+      // Check if location is available and zoom
+      if (location) {
+        map.setCenter(location);
+        map.setZoom(16);
+      }
+    } else {
+      console.error("No results found for location:", searchLocation);
     }
   });
 });
@@ -119,7 +135,7 @@ async function initMap() {
 
   map = new Map(document.getElementById("map"), {
     center: { lat: 43.651, lng: -79.347 },
-    zoom: 8,
+    zoom: 12,
   });
 
   const input = document.getElementById("search-bar");

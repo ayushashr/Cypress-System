@@ -45,15 +45,14 @@ function generateProgressBar(status) {
     </div>
   `;
 }
-
 function renderMyReports() {
   const reportListDiv = document.getElementById('reportList');
   reportListDiv.innerHTML = '';
 
   const reports = getReports();
 
-  // Only keep reports where id is between 1 and 4 (inclusive)
-  const filteredReports = reports.filter(report => report.id >= 1 && report.id <= 4);
+  // Filter reports where user is 'citizen'
+  const filteredReports = reports.filter(report => report.user === 'citizen');
 
   filteredReports.forEach((report, index) => {
     const card = document.createElement('div');
