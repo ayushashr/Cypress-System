@@ -4,21 +4,35 @@
   <meta charset="UTF-8" />
   <title>Pending Reports</title>
   <link rel="stylesheet" href="../styles/admin.css" />
+  <script type="module" src="../src/admin.js"></script>
 </head>
 <body>
-  <header>
-    <button onclick="window.location.href='adminHome.html'">Pending Reports</button>
-    <button onclick="window.location.href='approvedReport.html'">Approved</button>
-  </header>
-
   <div class="container">
-    <h2 class="section-title">Pending Reports</h2>
-    <div id="reportList">
-        
-
-    </div>
+    <h1 class="section-title">My Reports</h1>
+    <div id="reportList"></div>
   </div>
 
-  <script src="adminHome.js"></script>
+  <div id="report-form-container" class="report-form-container">
+    <div class="report-form-content">
+      <form id="report-form">
+        <h2>Report Declined Reason</h2>
+  
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Duplicate"> Duplicate</label>
+        </div>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Spam"> Spam</label>
+        </div>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Invalid"> Invalid</label>
+        </div>
+  
+        <div class="popup-buttons">
+          <button type="button" id="cancel">Cancel</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

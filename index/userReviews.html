@@ -12,14 +12,24 @@
 <body>
   <header>
     <button onclick="window.location.href='explore-page.html'">Explore</button>
-    <button onclick="window.location.href='addReview.html'">My Reports</button>
+    <button onclick="window.location.href='userReviews.html'">My Reports</button>
+    <button id="notifications-btn">Notifications</button>
   </header>
   
-
   <div class="container">
     <h1 class="section-title">My Reports</h1>
     <div id="reportList"></div>
   </div>
+  
+  <div id="notifications-popup" style="display: none;">
+    <div class="popup-content">
+      <h2>Notifications</h2>
+      <ul id="notification-list"></ul>
+      <button id="close-popup-btn">Close</button>
+    </div>
+  </div>
+
+
   
 </body>
 
