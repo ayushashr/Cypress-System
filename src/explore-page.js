@@ -30,8 +30,20 @@ function renderReports(filterLocation = '') {
       </div>
       <h3 class="report-location">Location: ${report.location}</h3>
       <h4 class="report-description">Description: ${report.description}</h4>
+      <button class="sub-${report.id}"> Subscribe </button>
     `;
 
+    // Event listener for the "Subscribe" button
+    div.querySelector(`.sub-${report.id}`).addEventListener('click', () => {
+      // Change the user of the report to 'citizen'
+      report.user = 'citizen';
+
+      // Optionally, save the updated reports to persist changes
+      saveReports();
+
+      // Refresh the reports after subscription
+      renderReports(filterLocation);
+    });
 
     div.addEventListener('click', () => {
       const service = new google.maps.places.PlacesService(map);
@@ -58,6 +70,7 @@ function renderReports(filterLocation = '') {
     container.appendChild(div);
   });
 }
+
 
 
 // Initial render of reports
