@@ -75,7 +75,6 @@ function renderReports(filterLocation = '') {
 
 // Initial render of reports
 renderReports();
-
 // Form submission logic
 reportForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -85,8 +84,20 @@ reportForm.addEventListener('submit', function (e) {
   const description = document.getElementById('description').value;
   const user = "citizen";
   const status = "Pending";
-  id = id +1;
+  id = id + 1;
 
+  // Check for duplicate report based on title and location
+  const duplicateReport = reports.find(report => 
+    report.title === title && report.location === location
+  );
+
+  if (duplicateReport) {
+    // If a duplicate report is found, show an alert and prevent adding the new report
+    alert('You cannot submit a duplicate report with the same title and location.');
+    return;  // Exit the function early, preventing the report from being added
+  }
+
+  // Create the new report
   const newReport = { id, user, title, location, status, description };
 
   // Add the new report to the reports array
@@ -99,6 +110,7 @@ reportForm.addEventListener('submit', function (e) {
   // Reset the form after submission
   reportForm.reset();
 });
+
 const searchInput = document.getElementById('search-bar');
 const defaultCenter = { lat: 43.651, lng: -79.347 }; // Default map center (Toronto)
 const defaultZoom = 12; // Default zoom level
