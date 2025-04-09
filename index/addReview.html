@@ -2,11 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="../styles/citizen.css">
-  <script defer src="../src/citizen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Reports</title>
+  <link rel="stylesheet" href="../styles/my-report.css">
 </head>
+
 <body>
+  <header>
+    <button onclick="window.location.href='explore-page.html'">Explore</button>
+    <button onclick="window.location.href='addReview.html'">My Reports</button>
+  </header>
   
+
+  <div class="container">
+    <h1 class="section-title">My Reports</h1>
+    <div id="reportList"></div>
+  </div>
+
+  <script>
+    const reports = [
+      {
+        title: 'Potholes near Mcdonalds',
+        location: "McDonald's, Yonge Street, Toronto, ON, Canada",
+        status: "New",
+        description: 'Several large potholes have appeared near the intersection with Bathurst Street. These potholes are causing damage to vehicles and posing a risk to cyclists.'
+      },
+      {
+        title: 'Graffiti on TTC Subway Stations',
+        location: "Dundas Subway Station, Dundas Street East, Toronto, ON, Canada",
+        status: "In Progress",
+        description: 'Graffiti at several entrances creating a poor public image.'
+      },
+      {
+        title: 'Hanging Sign',
+        location: "Toronto Metropolitan University, Victoria Street, Toronto, ON, Canada",
+        status: "Completed",
+        description: "A hanging sign above the SLC that looked ready to fall—now resolved."
+      },
+      {
+        title: 'Damaged Park Benches',
+        location: "High Park, Bloor Street West, Toronto, ON, Canada",
+        status: "In Progress",
+        description: "Several benches near the Grenadier Pond are either broken or missing."
+      }
+    ];
+  
+    function generateProgressBar(status) {
+      const stages = ['New', 'In Progress', 'Completed'];
+      const current = stages.indexOf(status);
+
+      return `
+        <div class="progress-bar">
+          ${stages.map((label, i) => `
+            <div class="step">
+              <div class="indicator ${i <= current ? 'active' : ''}"></div>
+              ${i === current ? `<div class="label">${label}</div>` : '<div class="label"></div>'}
+            </div>
+            ${i < stages.length - 1 ? '<div class="line"></div>' : ''}
+          `).join('')}
+        </div>
+      `;
+    }
+
+
+  
+    function renderMyReports() {
+      const reportListDiv = document.getElementById('reportList');
+      reportListDiv.innerHTML = '';
+  
+      reports.forEach((report, index) => {
+        const card = document.createElement('div');
+        card.className = 'report-card';
+        card.innerHTML = `
+          <div class="row">
+            <strong>Report #${index + 1}: ${report.title}</strong>
+          </div>
+          <div class="report-location"><strong>Location:</strong> ${report.location}</div>
+          <div class="report-description"><strong>Description:</strong> ${report.description}</div>
+          ${generateProgressBar(report.status)}
+        `;
+        reportListDiv.appendChild(card);
+      });
+    }
+  
+    document.addEventListener('DOMContentLoaded', renderMyReports);
+  </script>
+  
+</body>
+
+</html>
