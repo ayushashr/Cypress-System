@@ -1,18 +1,18 @@
 import { mapKey } from "./keys.js";
-
+let id = 8;
 (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
   ({key: `AIzaSyBzlUFvIOR_ib5xbh03sYh7To5nk93DqBI`, v: "weekly"});
   
 
 const reportForm = document.getElementById('report-form');
 
-import { reports } from "./data-accounts.js";
+import { getReports, saveReports } from "./data-accounts.js";
 
 // Render reports function
 function renderReports(filterLocation = '') {
   const container = document.getElementById('reports-container');
   container.innerHTML = '';
-
+  const reports = getReports();
   const filteredReports = filterLocation
     ? reports.filter(report =>
         report.location.toLowerCase().includes(filterLocation.toLowerCase())
@@ -66,18 +66,20 @@ renderReports();
 // Form submission logic
 reportForm.addEventListener('submit', function (e) {
   e.preventDefault();
-
+  const reports = getReports();
   const title = document.getElementById('title').value;
   const location = document.getElementById('location').value;
   const description = document.getElementById('description').value;
-  const status = "New"
+  const status = "Pending"
+  id = id +1;
 
-  const newReport = { title, location, status, description };
+  const newReport = { id, title, location, status, description };
 
   // Add the new report to the reports array
   reports.push(newReport);
 
   // Render the updated reports
+  saveReports();
   renderReports();
 
   // Reset the form after submission

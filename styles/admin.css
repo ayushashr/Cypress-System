@@ -68,6 +68,9 @@
     margin-bottom: 8px;
   }
   
+  .report-container {
+    width: 80%;
+  }
   .report-location,
   .report-description {
     margin-top: 4px;
@@ -92,11 +95,126 @@
     cursor: pointer;
   }
   
-  .approve-btn {
-    background-color: #28a745;
+  .report-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
   }
   
-  .decline-btn {
-    background-color: #dc3545;
+  .status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 150px;
   }
-   
+  
+  .status-container select,
+  .status-container button {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .report-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c22e3d;
+  }
+  
+  .set-status:hover {
+    background-color: #d5d5d5;
+  }
+  
+
+  .report-form-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .report-form-content {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .report-form-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .report-form-content label {
+    display: block;
+    margin: 5px 0 10px 0;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .report-form-content input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .report-form-content button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .report-form-content button[type="cancel"] {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .report-form-content button[type="submit"] {
+    background-color: #dc3545;
+    color: white;
+  }
+  .report-form-content button[type="submit"]:hover {
+    background-color: #bb2c3b;
+    color: white;
+  }
+  .report-form-content button[type="cancel"]:hover {
+    background-color: #a3a3a3;
+    color: rgb(0, 0, 0);
+  }
+
+  .checkbox-group {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+  }

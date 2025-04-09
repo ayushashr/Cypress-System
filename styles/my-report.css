@@ -139,3 +139,81 @@ header button:hover {
   margin: 0 4px;
 }
 
+/* Popup Styles */
+#notifications-popup {
+  display: none; /* Hide the popup by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  justify-content: center;
+  align-items: center;
+  display: flex; /* Use flexbox to center the content */
+  position: fixed;
+}
+
+/* Popup Content */
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  /* Center the box inside the container */
+  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+#notification-list {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+#notification-list li {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd; /* Separator between notifications */
+  font-size: 16px;
+}
+
+#close-popup-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  align-self: center; /* Center the close button */
+}
+
+#close-popup-btn:hover {
+  background-color: #0056b3;
+}
+
+#notifications-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#notifications-btn:hover {
+  background-color: #218838;
+}
+

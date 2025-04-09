@@ -1,8 +1,36 @@
 
-import { reports } from "./data-accounts.js";
+import { reports, getReports, getNotifications } from "./data-accounts.js";
+
+function renderNotifications() {
+  const notifications = getNotifications();
+  const notificationList = document.getElementById('notification-list');
+  notificationList.innerHTML = '';
+
+  notifications.forEach(notification => {
+    const li = document.createElement('li');
+    li.textContent = `${notification.title}: ${notification.description}`;
+    notificationList.appendChild(li);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Add click event to open the notifications popup
+  const notificationsBtn = document.getElementById('notifications-btn');
+  const closePopupBtn = document.getElementById('close-popup-btn');
+  const notificationsPopup = document.getElementById('notifications-popup');
+
+  notificationsBtn.addEventListener('click', () => {
+    notificationsPopup.style.display = 'block';
+    renderNotifications();  // Populate the notification popup with notifications
+  });
+
+  closePopupBtn.addEventListener('click', () => {
+    notificationsPopup.style.display = 'none';
+  });
+});
 
 function generateProgressBar(status) {
-  const stages = ['New', 'In Progress', 'Completed'];
+  const stages = ['Pending', 'In Progress', 'Completed'];
   const current = stages.indexOf(status);
 
   return `
@@ -22,15 +50,17 @@ function renderMyReports() {
   const reportListDiv = document.getElementById('reportList');
   reportListDiv.innerHTML = '';
 
-  // Only take the first 4 reports
-  const limitedReports = reports.slice(0, 4);
+  const reports = getReports();
 
-  limitedReports.forEach((report, index) => {
+  // Only keep reports where id is between 1 and 4 (inclusive)
+  const filteredReports = reports.filter(report => report.id >= 1 && report.id <= 4);
+
+  filteredReports.forEach((report, index) => {
     const card = document.createElement('div');
     card.className = 'report-card';
     card.innerHTML = `
       <div class="row">
-        <strong>Report #${index + 1}: ${report.title}</strong>
+        <strong>Report #${report.id}: ${report.title}</strong>
       </div>
       <div class="report-location"><strong>Location:</strong> ${report.location}</div>
       <div class="report-description"><strong>Description:</strong> ${report.description}</div>
@@ -39,5 +69,6 @@ function renderMyReports() {
     reportListDiv.appendChild(card);
   });
 }
+
 
 document.addEventListener('DOMContentLoaded', renderMyReports);
